@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+:root {
+    --gold: #E9C46A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Rob;
+}
+
+.header {
+    display: grid;
+    grid-template-rows: 100px 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.banner {
+    color: var(--gold);
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    background-color: var(--gold);
+    height: 100%;
+    width: 750px;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: black;
+}
