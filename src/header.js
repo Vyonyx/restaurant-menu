@@ -1,10 +1,8 @@
 // Generating the front page of the restaurant.
-function frontPage() {
+function header() {
     const headerContainer = document.createElement('div');
     headerContainer.classList.add('header');
     
-
-
     const headerBanner = document.createElement('h1');
     headerBanner.classList.add('banner');
 
@@ -48,4 +46,4 @@ function frontPage() {
     return headerContainer
 };
 
-export default frontPage
+export default header
