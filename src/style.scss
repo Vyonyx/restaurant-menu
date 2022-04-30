@@ -1,0 +1,137 @@
+$gold: #E9C46A;
+$dark-gray: #1A1A1A;
+
+$head-height: 100px;
+$nav-height: 30px;
+$foot-height: 40px;
+$content-height: calc(100vh - calc($head-height + $foot-height));
+
+$menu-header-height: 150px;
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin shadow {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+@mixin h1Heading {
+    font-variant: small-caps;
+    
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    padding-top: $head-height;
+    padding-bottom: $foot-height;
+    .header, .footer {
+        @include flexCenter();
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        color: white;
+        background-color: black;
+    }
+    .header {
+        top: 0;
+        height: $head-height;
+        .banner h1 {
+            @include h1Heading();
+        }
+    }
+    .footer {
+        bottom: 0;
+        height: $foot-height;
+    }
+    .nav-container {
+        @include flexCenter();
+        @include shadow();
+        gap: 30px;
+        background-color: $gold;
+        height: $nav-height;
+        width: 600px;
+        position: absolute;
+        top: 100px;
+        a {
+            @include h1Heading();
+            color: black;
+            text-decoration: none;
+            &:hover {
+                font-size: 1.1em;
+                font-weight: bolder;
+            }
+        }
+    }
+    .content-container {
+        @include flexCenter();
+        .main-content {
+            @include flexCenter();
+            flex-direction: column;
+            height: $content-height;
+            // Main Page styling.
+            .hero-message {
+                @include flexCenter();
+                @include shadow();
+                flex-direction: column;
+                padding: 75px;
+                gap: 30px;
+                text-align: justify;
+                color: white;
+                background-color: $dark-gray;
+                h1 {
+                    @include h1Heading();
+                }
+            }
+            .image-container {
+                @include flexCenter();
+                margin: auto 0;
+                gap: 30px;
+                .main-img {
+                    width: 300px;
+                    height: 300px;
+                    border: 5px solid $gold;
+                }
+            }
+        }
+        .menu-content {
+            .menu-header {
+                @include flexCenter();
+                @include shadow();
+                position: fixed;
+                top: $head-height;
+                left: 0;
+                color: white;
+                background-color: $dark-gray;
+                height: $menu-header-height;
+                width: calc(50% - 300px);
+                z-index: 3;
+            }
+            .menu-container {
+                margin-top: calc($menu-header-height + 20px);
+                margin-bottom: calc($foot-height + 50px);
+                height: 500px;
+                padding: 50px 100px;
+                width: auto;
+                overflow: scroll;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+                .menu-item {
+                    width: 500px;
+                    height: 300px;
+                    border: 1px solid black;
+                }
+            }
+        }
+    }
+}
