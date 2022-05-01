@@ -1,9 +1,14 @@
 function createNavLink(name) {
-    const link = document.createElement('a');
-    const newTitle = document.createTextNode(name);
-    link.appendChild(newTitle);
-    link.title = name;
-    link.href = './';
+    // const link = document.createElement('p');
+    // link.classList.add(name.toLowerCase());
+    // const newTitle = document.createTextNode(name);
+    // link.appendChild(newTitle);
+    // link.title = name;
+    // link.href = './';
+
+    const link = document.createElement('p');
+    link.innerText = name;
+    link.classList.add(name.toLowerCase());
     return link
 }
 

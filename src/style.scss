@@ -1,4 +1,5 @@
 $gold: #E9C46A;
+$green: #119977;
 $dark-gray: #1A1A1A;
 
 $head-height: 100px;
@@ -62,7 +63,7 @@ body {
         width: 600px;
         position: absolute;
         top: 100px;
-        a {
+        p {
             @include h1Heading();
             color: black;
             text-decoration: none;
@@ -125,11 +126,68 @@ body {
                 overflow: scroll;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 50px;
-                .menu-item {
+                gap: 50px 100px;
+                .item-container {
+                    display: grid;
+                    grid-template-columns: 150px auto;
+                    gap: 20px;
                     width: 500px;
-                    height: 300px;
-                    border: 1px solid black;
+                    height: auto;
+                    .item-img {
+                        border: 3px solid $gold;
+                        width: 150px;
+                        height: 150px;
+                    }
+                    .item-text {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        h3 {
+                            @include h1Heading();
+                            color: $green;
+                        }
+                        p {
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+        }
+        .contact-container {
+            @include flexCenter();
+            @include h1Heading();
+            flex-direction: column;
+            .contact-header {
+                @include flexCenter();
+                color: white;
+                background-color: $dark-gray;
+                height: $menu-header-height;
+                width: 500px;
+                position: fixed;
+                top: calc($head-height + 30px);
+            }
+            .contact-items {
+                @extend .contact-header;
+                @include h1Heading();
+                flex-direction: column;
+                position: absolute;
+                top: 310px;
+                gap: 50px;
+                height: auto;
+                padding: 30px 0px;
+            }
+            div {
+                @include flexCenter();
+                flex-direction: column;
+                gap: 10px;
+                img {
+                    position: fixed;
+                    transform: translateX(-180px) translateY(-15px);
+                    height: 40px;
+                    width: 40px;
+                }
+                h3 {
+                    color: $gold;
                 }
             }
         }
